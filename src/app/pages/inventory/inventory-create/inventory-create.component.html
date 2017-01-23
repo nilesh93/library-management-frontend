@@ -1,0 +1,160 @@
+<div class="row">
+
+  <div class="col-md-5">
+    <div class="box">
+      <div class="box-header">
+        <h2>Inventory Information</h2>
+      </div>
+      <div class="box-divider m-a-0"></div>
+      <div class="box-body">
+
+        <div class="form-group row">
+          <label class="col-sm-4 form-control-label">Inventory Type</label>
+          <div class="col-sm-8">
+            <select class="form-control">
+              <option value="">Furniture</option>             
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-4 form-control-label">Inventory Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" placeholder="">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label class="col-sm-4 form-control-label">Remarks</label>
+          <div class="col-sm-8">
+            <textarea type="text" rows="6" class="form-control" placeholder=""></textarea>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="col-md-7">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header">
+            <h2>Item Information</h2>
+          </div>
+          <div class="box-divider m-a-0"></div>
+          <div class="box-body">
+            <div class="row">
+
+              <div class="col-md-4">
+                <div>
+                  <img [src]="src" align="center" style=" height: auto;" class="img-responsive center-block" [hidden]="src === ''">
+</div>
+<br> <br>
+<input type="file" image-upload (imageSelected)="selected($event)">
+
+</div>
+
+<div class="col-md-8">
+
+  <div class="form-group row">
+    <label class="col-sm-4 form-control-label">REF ID</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" placeholder="">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 form-control-label">Date Added</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" placeholder="">
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <label class="col-sm-4 form-control-label">Remarks</label>
+    <div class="col-sm-8">
+      <textarea type="text" class="form-control" placeholder=""></textarea>
+    </div>
+
+
+  </div>
+
+  <div class="form-group row">
+
+
+    <div class=" col-md-4"></div>
+    <div class="col-md-4">
+      <button class="btn  btn-block btn-fw white">Reset</button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-block btn-fw primary">Add To List</button>
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+<div class="row">
+ 
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header">
+        <h2>Inventory Item List</h2>
+      </div>
+      <div class="box-divider m-a-0"></div>
+      <div class="box-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+  <div class="col-md-8"></div>
+  <div class="col-md-2">
+    <button class="btn  btn-block btn-fw white">Clear List</button>
+  </div>
+  <div class="col-md-2">
+    <a [routerLink]="['/','inventory','view','1']" class="btn btn-block btn-fw primary">Save</a>
+  </div>
+
+
+</div>

@@ -1,0 +1,75 @@
+<div class="row">
+
+  <div class="col-md-12">
+
+
+
+
+    <div class="box">
+      <div class="box-header">
+        <h2>Copies</h2>
+
+        <!--<div class="box-tool">
+          <ul class="nav">
+            <li class="nav-item inline">
+              <button (click)="copyForm.open()" class="btn   info btn-sm rounded">
+                <i class="fa fa-fw fa-plus"></i> Add New Copy
+              </button>
+            </li>
+
+          </ul>
+        </div>-->
+
+      </div>
+
+      <div class="box-divider m-a-0"> </div>
+      <table class="table table-hover b-t">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Remarks</th>
+            <th>Status</th>
+            <th>Reserved</th>
+            <th style="width:15rem"></th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>hello world</td>
+    <td>
+      <h6><span class="label rounded primary">Available</span> </h6>
+    </td>
+    <td>
+      <h6><span class="label rounded primary">No</span></h6>
+    </td>
+    <td>
+
+
+      <div class="dropdown inline">
+        <button class="btn   rounded btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">More Actions </button>
+        <div class="dropdown-menu pull-right">
+          <a class="dropdown-item">Edit</a>
+          <a class="dropdown-item">Archive</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item">Reserve</a>
+          <a class="dropdown-item">Borrow</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item">Print Barcode</a>
+          <a class="dropdown-item">Print QR Code</a>
+        </div>
+      </div>
+
+      <button class=" btn primary rounded btn-sm" [routerLink]="['/','books','copy','1']"> View</button>
+
+    </td>
+  </tr>
+
+
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+

@@ -1,0 +1,148 @@
+  <div class="box">
+    <div class="box-header">
+      <h2>Main Information</h2>
+    </div>
+    <div class="box-divider m-a-0"></div>
+    <div class="box-body">
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Book Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Author</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Editor</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Publisher</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <label class="col-sm-1 form-control-label"> Year</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 form-control-label">Category</label>
+        <div class="col-sm-4">
+          <select   class="form-control" placeholder=""> 
+            <option value="">N/A</option>
+          </select>
+        </div>
+        <label class="col-sm-1 form-control-label">ISBN</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <label class="col-sm-1 form-control-label">CL Num</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-header">
+      <h2>Additional Information</h2>
+    </div>
+    <div class="box-divider m-a-0"></div>
+    <div class="box-body">
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Series</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <label class="col-sm-2 form-control-label">Series No.</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Pages</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <label class="col-sm-2 form-control-label">Height</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Remarks</label>
+        <div class="col-sm-10">
+          <textarea type="text" class="form-control" placeholder=""></textarea>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-header">
+      <h2>Book Summary</h2>
+    </div>
+    <div class="box-divider m-a-0"></div>
+    <div class="box-body">
+
+
+      <div class="form-group row">
+
+        <div class="col-sm-12">
+          <textarea type="text" class="form-control" rows="7" placeholder="Enter Book Summary"></textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-7"></div>
+     <div class="col-md-2">
+      <button class="btn  btn-block btn-fw white">Reset</button>
+    </div>
+    <div class="col-md-3">
+      <a  [routerLink]="['/','books','view','1']" class="btn btn-block btn-fw primary">Save</a>
+    </div>
+
+
+  </div>
