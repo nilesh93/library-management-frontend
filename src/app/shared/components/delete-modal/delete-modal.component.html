@@ -1,0 +1,14 @@
+<modal #deleteModal>
+
+    <modal-header>
+        <h4 class="modal-title">Are you sure You want to Delete?</h4>
+    </modal-header>
+    <modal-body>
+        <p>This cannot be undone later.</p>
+    </modal-body>
+    <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="deleteModal.dismiss()">Cancel</button>
+        <button type="button" (click)="delete()" class="btn btn-danger">Delete</button>
+    </modal-footer>
+
+</modal>

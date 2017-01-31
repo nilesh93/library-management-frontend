@@ -1,11 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ImageUploadModule } from 'ng2-imageupload';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
+
+import { BookService } from './shared/services/book.service';
+import { CommonService } from './shared/services/common.service';
+
 
 import { Routing } from './app.routing';
 import { AppComponent } from './app.component';
@@ -37,6 +43,8 @@ import { InventoryHistoryComponent } from './pages/inventory/inventory-history/i
 import { UserCreateComponent } from './pages/users/user-create/user-create.component';
 import { UserFormComponent } from './pages/users/user-form/user-form.component';
 import { UserListComponent } from './pages/users/user-list/user-list.component';
+import { CopyFormComponent } from './pages/books/copy-form/copy-form.component';
+import { DeleteModalComponent } from './shared/components/delete-modal/delete-modal.component';
 
 
 @NgModule({
@@ -69,7 +77,9 @@ import { UserListComponent } from './pages/users/user-list/user-list.component';
     InventoryHistoryComponent,
     UserCreateComponent,
     UserFormComponent,
-    UserListComponent
+    UserListComponent,
+    CopyFormComponent,
+    DeleteModalComponent
 
   ],
   imports: [
@@ -80,9 +90,14 @@ import { UserListComponent } from './pages/users/user-list/user-list.component';
     ImageUploadModule,
     ModalModule.forRoot(),
     BootstrapModalModule,
-    Ng2Bs3ModalModule
+    Ng2Bs3ModalModule,
+    ReactiveFormsModule,
+    SimpleNotificationsModule
   ],
-  providers: [],
+  providers: [
+    BookService,
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

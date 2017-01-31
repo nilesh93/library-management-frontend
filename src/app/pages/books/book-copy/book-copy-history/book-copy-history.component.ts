@@ -1,3 +1,5 @@
+import { BookService } from './../../../../shared/services/book.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookCopyHistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }

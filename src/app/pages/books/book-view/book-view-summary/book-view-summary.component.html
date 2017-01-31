@@ -1,152 +1,193 @@
 <div class="row">
-  <div class="col-sm-7">
-    <div class="box">
-      <div class="box-header ">
-        <h2>Famous Five <small> By Enid Blyton</small></h2>
+    <div class="col-sm-7">
+        <div class="box">
+            <div class="box-header ">
+                <h2>{{bookDetails.title}} <small> By {{bookDetails.author}}</small></h2>
 
-      </div>
-      <div class="box-divider m-a-0"></div>
-      <div class="box-body  ">
-        <p>
-          No Summary Available
-        </p>
+            </div>
+            <div class="box-divider m-a-0"></div>
+            <div class="box-body  ">
+                <p>
+                    {{bookDetails.summary}}
+                </p>
 
-      </div>
-      <div class="box-divider m-a-0"></div>
-      <div class="box-body  ">
-        <p>
-          No Remarks Available
-        </p>
+            </div>
+            <div class="box-divider m-a-0"></div>
+            <div class="box-body  ">
+                <p>
+                    {{bookDetails.remarks}}
+                </p>
 
-      </div>
-      <div class="box-divider m-a-0"></div>
-      <div class="row row-col no-gutter  ">
-        <div class="col-xs-3 b-r">
-          <a class="p-y block text-center">
-            <strong class="block">796</strong>
-            <span class="block">Copies</span>
-          </a>
+            </div>
+            <div class="box-divider m-a-0"></div>
+            <div class="row row-col no-gutter  " *ngIf="showStats">
+                <div class="col-xs-4 b-r">
+                    <a class="p-y block text-center">
+                        <strong class="block">{{bookDetails.total_copies}}</strong>
+                        <span class="block">Copies</span>
+                    </a>
+                </div>
+                <div class="col-xs-4 b-r">
+                    <a class="p-y block text-center">
+                        <strong class="block">{{bookDetails.available_copies}}</strong>
+                        <span class="block">Available</span>
+                    </a>
+                </div>
+
+                <div class="col-xs-4">
+                    <a class="p-y block text-center">
+                        <strong class="block">{{bookDetails.taken_copies}}</strong>
+                        <span class="block">Taken</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
-        <div class="col-xs-3 b-r">
-          <a class="p-y block text-center">
-            <strong class="block">342</strong>
-            <span class="block">Available</span>
-          </a>
+
+
+        <div class="box" *ngIf="!showStats">
+            <div class="box-header ">
+                <h2>Copy Information </h2>
+
+            </div>
+            <div class="box-divider m-a-0"></div>
+            <div class="box-body  ">
+                <p>
+                    {{copyDetails.remarks}}
+                </p>
+
+            </div>
+            <div class="box-divider m-a-0"></div>
+            <div class="list group">
+
+
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle dark avatar">
+                <span>R</span>
+
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>REF ID </a></div>
+                        <small class="text-muted text-ellipsis">{{copyDetails.ref_id}}</small>
+
+                    </div>
+                </li>
+                <li class="list-item ">
+                    <a class="list-left">
+                        <span class="w-40 circle  avatar" [ngClass]="{'red': copyDetails.taken, 'green':!copyDetails.taken}">
+                <span>{{(copyDetails.taken)?'T':'A'}}</span>
+
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>Status  </a></div>
+                        <small class="text-muted text-ellipsis">{{(copyDetails.taken)?'Taken':'Available'}} </small>
+                    </div>
+                </li>
+            </div>
         </div>
-        <div class="col-xs-3  b-r">
-          <a class="p-y block text-center">
-            <strong class="block">20</strong>
-            <span class="block">Reserved</span>
-          </a>
-        </div>
-        <div class="col-xs-3">
-          <a class="p-y block text-center">
-            <strong class="block">2</strong>
-            <span class="block">Taken</span>
-          </a>
-        </div>
-      </div>
 
     </div>
-  </div>
-  <div class="col-md-5">
-    <div class="box">
-      <div class="box-header ">
-        <h2>Information</h2>
+    <div class="col-md-5">
+        <div class="box">
+            <div class="box-header ">
+                <h2>Book Information</h2>
 
-      </div>
-      <div class="box-divider m-a-0"></div>
-      <div class="list group">
+            </div>
+            <div class="box-divider m-a-0"></div>
+            <div class="list group">
 
 
-        <li class="list-item">
-          <a href="" class="list-left">
-            <span class="w-40 circle primary avatar">
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle primary avatar">
                 <span>E</span>
 
-            </span>
-          </a>
-          <div class="list-body">
-            <div><a href="">Edited By </a></div>
-            <small class="text-muted text-ellipsis">Enid Blyton</small>
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>Edited By </a></div>
+                        <small class="text-muted text-ellipsis">{{bookDetails.editor}}</small>
 
-          </div>
-        </li>
+                    </div>
+                </li>
 
-        <li class="list-item">
-          <a href="" class="list-left">
-            <span class="w-40 circle indigo avatar">
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle indigo avatar">
                 <span>P</span>
 
-            </span>
-          </a>
-          <div class="list-body">
-            <div><a href="">Published By </a></div>
-            <small class="text-muted text-ellipsis">Enid Blyton On 2008</small>
-          </div>
-        </li>
-        <li class="list-item">
-          <a href="" class="list-left">
-            <span class="w-40 circle pink avatar">
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>Published By </a></div>
+                        <small class="text-muted text-ellipsis">{{bookDetails.publisher}} On {{bookDetails.published_year}} </small>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle pink avatar">
                 <span>C</span>
 
-            </span>
-          </a>
-          <div class="list-body">
-            <div><a href="">Category </a></div>
-            <small class="text-muted text-ellipsis">N/A</small>
-          </div>
-        </li>
-        <li class="list-item">
-          <a href="" class="list-left">
-            <span class="w-40 circle purple avatar">
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>Category </a></div>
+                        <small class="text-muted text-ellipsis">{{category.cat_name}}</small>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle purple avatar">
                 <span>I</span>
 
-            </span>
-          </a>
-          <div class="list-body">
-            <div><a href="">ISBN </a></div>
-            <small class="text-muted text-ellipsis">N/A</small>
-          </div>
-        </li>
-        <li class="list-item">
-          <a href="" class="list-left">
-            <span class="w-40 circle blue avatar">
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>ISBN </a></div>
+                        <small class="text-muted text-ellipsis">{{bookDetails.isbn}}</small>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle blue avatar">
                 <span>C</span>
 
-            </span>
-          </a>
-          <div class="list-body">
-            <div><a href="">CL Number </a></div>
-            <small class="text-muted text-ellipsis">N/A</small>
-          </div>
-        </li>
-        <li class="list-item">
-          <a href="" class="list-left">
-            <span class="w-40 circle dark avatar">
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>CL Number </a></div>
+                        <small class="text-muted text-ellipsis">{{bookDetails.cl_number}}</small>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle dark avatar">
                 <span>S</span>
 
-            </span>
-          </a>
-          <div class="list-body">
-            <div><a href="">Series </a></div>
-            <small class="text-muted text-ellipsis">0001 - Famous FIve</small>
-          </div>
-        </li>
-        <li class="list-item">
-          <a href="" class="list-left">
-            <span class="w-40 circle dark green">
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>Series </a></div>
+                        <small class="text-muted text-ellipsis">{{bookDetails.series_num}} - {{bookDetails.series}}</small>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <a class="list-left">
+                        <span class="w-40 circle dark green">
                 <span>P</span>
 
-            </span>
-          </a>
-          <div class="list-body">
-            <div><a href="">Pysical Information </a></div>
-            <small class="text-muted text-ellipsis">85 pages & 20.5cm Height</small>
-          </div>
-        </li>
+                        </span>
+                    </a>
+                    <div class="list-body">
+                        <div><a>Pysical Information </a></div>
+                        <small class="text-muted text-ellipsis">{{bookDetails.pages}} pages & {{bookDetails.height}} Height</small>
+                    </div>
+                </li>
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

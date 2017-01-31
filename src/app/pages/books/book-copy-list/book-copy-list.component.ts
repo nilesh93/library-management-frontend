@@ -1,3 +1,4 @@
+import { BookService } from './../../../shared/services/book.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookCopyListComponent implements OnInit {
 
-  constructor() { }
+  copies: Object = {};
+  constructor(private bookService: BookService) {
+    this.copySearch({}, false);
+  }
+
 
   ngOnInit() {
+  }
+
+  copySearch(values, loadMore) {
+
+    this.bookService.getCopies(values, loadMore).subscribe((data) => {
+      this.copies = data;
+      console.log(data);
+    });
   }
 
 }

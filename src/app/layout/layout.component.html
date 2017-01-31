@@ -1,28 +1,28 @@
 <div class="app" id="app">
 
-  <!-- ############ LAYOUT START-->
+    <!-- ############ LAYOUT START-->
 
-  <!-- aside -->
-  <div id="aside" class="app-aside fade nav-dropdown black">
-    <!-- fluid app aside -->
-    <div class="navside dk" data-layout="column">
-      <div class="navbar no-radius">
-        <!-- brand -->
-        <a href="index.html" class="navbar-brand">
-          <div data-ui-include="'images/logo.svg'"></div>
-          <img src="images/logo.png" alt="." class="hide">
-          <span class="hidden-folded inline">Library Admin</span>
-        </a>
-        <!-- / brand -->
-      </div>
-      <div data-flex class="hide-scroll">
-        <nav class="scroll nav-stacked nav-stacked-rounded nav-color">
+    <!-- aside -->
+    <div id="aside" class="app-aside fade nav-dropdown black">
+        <!-- fluid app aside -->
+        <div class="navside dk" data-layout="column">
+            <div class="navbar no-radius">
+                <!-- brand -->
+                <a href="" class="navbar-brand">
+                    <!--<div data-ui-include="'images/logo.svg'"></div>
+          <img src="images/logo.png" alt="." class="hide">-->
+                    <span class="hidden-folded inline">Library Admin</span>
+                </a>
+                <!-- / brand -->
+            </div>
+            <div data-flex class="hide-scroll">
+                <nav class="scroll nav-stacked nav-stacked-rounded nav-color">
 
-          <ul class="nav" data-ui-nav>
-            <li class="nav-header hidden-folded">
-              <span class="text-xs">Quick Links</span>
-            </li>
-            <!--<li>
+                    <ul class="nav" data-ui-nav>
+                        <li class="nav-header hidden-folded">
+                            <span class="text-xs">Quick Links</span>
+                        </li>
+                        <!--<li>
               <a class="b-default">
                 <span class="nav-icon text-white no-fade">
                     <i class="ion-filing"></i>
@@ -31,258 +31,258 @@
               </a>
             </li>-->
 
-            <li>
-              <a class="b-default" [routerLink]="['/','counter']">
-                <span class="nav-icon">
+                        <li>
+                            <a class="b-default" [routerLink]="['/','counter']">
+                                <span class="nav-icon">
                     <i class="ion-person"></i>
                   </span>
-                <span class="nav-text">Counter</span>
-              </a>
-            </li>
-            <li>
-              <a class="b-default" [routerLink]="['/','returns','pending']">
-                <span class="nav-icon">
+                                <span class="nav-text">Counter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="b-default" [routerLink]="['/','returns','pending']">
+                                <span class="nav-icon">
                     <i class="ion-clock"></i>
                   </span>
-                <span class="nav-text">  Returns / Checkouts </span>
-              </a>
-            </li>
+                                <span class="nav-text">  Returns / Checkouts </span>
+                            </a>
+                        </li>
 
-            <li class="nav-header hidden-folded m-t">
-              <span class="text-xs">Management</span>
-            </li>
-            <li [routerLinkActive]="['/','books']">
-              <a>
-                <span class="nav-caret">
+                        <li class="nav-header hidden-folded m-t">
+                            <span class="text-xs">Management</span>
+                        </li>
+                        <li [routerLinkActive]="['/','books']">
+                            <a>
+                                <span class="nav-caret">
                     <i class="fa fa-caret-down"></i>
                   </span>
-                <span class="nav-icon">
+                                <span class="nav-icon">
                     <i class="fa fa-book"></i>
                   </span>
-                <span class="nav-text">Books</span>
-              </a>
-              <ul class="nav-sub nav-mega nav-mega-3">
-                <li [routerLinkActive]="['/','books','create']">
-                  <a [routerLink]="['/','books','create']">
-                    <span class="nav-text">Create New</span>
-                  </a>
-                </li>
-                <li>
-                  <a [routerLink]="['/','books','list']">
-                    <span class="nav-text">Search Books</span>
-                  </a>
-                </li>
-                <li>
-                  <a [routerLink]="['/','books','copy-list']">
-                    <span class="nav-text">Search Copies</span>
-                  </a>
-                </li>
+                                <span class="nav-text">Books</span>
+                            </a>
+                            <ul class="nav-sub nav-mega nav-mega-3">
+                                <li [routerLinkActive]="['/','books','create']">
+                                    <a [routerLink]="['/','books','create']">
+                                        <span class="nav-text">Create New</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/','books','list']">
+                                        <span class="nav-text">Search Books</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/','books','copy-list']">
+                                        <span class="nav-text">Search Copies</span>
+                                    </a>
+                                </li>
 
 
-              </ul>
-            </li>
+                            </ul>
+                        </li>
 
-            <li [routerLinkActive]="['/','members']">
-              <a>
-                <span class="nav-caret">
+                        <li [routerLinkActive]="['/','members']">
+                            <a>
+                                <span class="nav-caret">
                     <i class="fa fa-caret-down"></i>
                   </span>
-                <span class="nav-icon">
+                                <span class="nav-icon">
                     <i class="fa fa-user"></i>
                   </span>
-                <span class="nav-text">Members</span>
-              </a>
-              <ul class="nav-sub nav-mega nav-mega-3">
-                <li>
-                  <a [routerLink]="['/','members','create']">
-                    <span class="nav-text">Create New</span>
-                  </a>
-                </li>
-                <li>
-                  <a [routerLink]="['/','members','list']">
-                    <span class="nav-text">Search Member</span>
-                  </a>
-                </li>
+                                <span class="nav-text">Members</span>
+                            </a>
+                            <ul class="nav-sub nav-mega nav-mega-3">
+                                <li>
+                                    <a [routerLink]="['/','members','create']">
+                                        <span class="nav-text">Create New</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/','members','list']">
+                                        <span class="nav-text">Search Member</span>
+                                    </a>
+                                </li>
 
-              </ul>
-            </li>
-            <li [routerLinkActive]="['/','payments']">
-              <a>
-                <span class="nav-caret">
+                            </ul>
+                        </li>
+                        <li [routerLinkActive]="['/','payments']">
+                            <a>
+                                <span class="nav-caret">
                     <i class="fa fa-caret-down"></i>
                   </span>
-                <span class="nav-icon">
+                                <span class="nav-icon">
                     <i class="fa fa-credit-card"></i>
                   </span>
-                <span class="nav-text">Payments</span>
-              </a>
-              <ul class="nav-sub nav-mega nav-mega-3">
-                <li>
-                  <a [routerLink]="['/','payments','create']">
-                    <span class="nav-text">New Payment</span>
-                  </a>
-                </li>
-                <li>
-                  <a [routerLink]="['/','payments','list']">
-                    <span class="nav-text">Search Payment</span>
-                  </a>
-                </li>
+                                <span class="nav-text">Payments</span>
+                            </a>
+                            <ul class="nav-sub nav-mega nav-mega-3">
+                                <li>
+                                    <a [routerLink]="['/','payments','create']">
+                                        <span class="nav-text">New Payment</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/','payments','list']">
+                                        <span class="nav-text">Search Payment</span>
+                                    </a>
+                                </li>
 
-              </ul>
-            </li>
+                            </ul>
+                        </li>
 
-            <li [routerLinkActive]="['/','payments']">
-              <a>
-                <span class="nav-caret">
+                        <li [routerLinkActive]="['/','payments']">
+                            <a>
+                                <span class="nav-caret">
                     <i class="fa fa-caret-down"></i>
                   </span>
-                <span class="nav-icon">
+                                <span class="nav-icon">
                     <i class="fa fa-list"></i>
                   </span>
-                <span class="nav-text">Inventory</span>
-              </a>
-              <ul class="nav-sub nav-mega nav-mega-3">
-                <li>
-                  <a [routerLink]="['/','inventory','create']">
-                    <span class="nav-text">Add Inventory</span>
-                  </a>
-                </li>
-                <li>
-                  <a [routerLink]="['/','inventory','list']">
-                    <span class="nav-text">Search Inventory</span>
-                  </a>
-                </li>
+                                <span class="nav-text">Inventory</span>
+                            </a>
+                            <ul class="nav-sub nav-mega nav-mega-3">
+                                <li>
+                                    <a [routerLink]="['/','inventory','create']">
+                                        <span class="nav-text">Add Inventory</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/','inventory','list']">
+                                        <span class="nav-text">Search Inventory</span>
+                                    </a>
+                                </li>
 
-              </ul>
-            </li>
-            <li [routerLinkActive]="['/','payments']">
-              <a>
-                <span class="nav-caret">
+                            </ul>
+                        </li>
+                        <li [routerLinkActive]="['/','payments']">
+                            <a>
+                                <span class="nav-caret">
                     <i class="fa fa-caret-down"></i>
                   </span>
-                <span class="nav-icon">
+                                <span class="nav-icon">
                     <i class="fa fa-lock"></i>
                   </span>
-                <span class="nav-text">Users</span>
-              </a>
-              <ul class="nav-sub nav-mega nav-mega-3">
-                <li>
-                  <a [routerLink]="['/','users','create']">
-                    <span class="nav-text">New User</span>
-                  </a>
-                </li>
-                <li>
-                  <a [routerLink]="['/','users','list']">
-                    <span class="nav-text">Search User</span>
-                  </a>
-                </li>
+                                <span class="nav-text">Users</span>
+                            </a>
+                            <ul class="nav-sub nav-mega nav-mega-3">
+                                <li>
+                                    <a [routerLink]="['/','users','create']">
+                                        <span class="nav-text">New User</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/','users','list']">
+                                        <span class="nav-text">Search User</span>
+                                    </a>
+                                </li>
 
-              </ul>
-            </li>
+                            </ul>
+                        </li>
 
 
-          </ul>
-        </nav>
-      </div>
-      <div data-flex-no-shrink>
-        <div class="nav-fold dropup">
-          <a data-toggle="dropdown">
-            <div class="pull-left">
-              <div class="inline"><span class="avatar w-40 grey">JR</span></div>
-              <img src="images/a0.jpg" alt="..." class="w-40 img-circle hide">
+                    </ul>
+                </nav>
             </div>
-            <div class="clear hidden-folded p-x">
-              <span class="block _500 text-muted">Jean Reyes</span>
-              <div class="progress-xxs m-y-sm lt progress">
-                <div class="progress-bar info" style="width: 15%;">
-</div>
-</div>
-</div>
-</a>
-<div class="dropdown-menu w dropdown-menu-scale ">
-  <a class="dropdown-item" href="profile.html">
-    <span>Profile</span>
-  </a>
-  <a class="dropdown-item" href="setting.html">
-    <span>Settings</span>
-  </a>
-  <a class="dropdown-item" href="app.inbox.html">
-    <span>Inbox</span>
-  </a>
-  <a class="dropdown-item" href="app.message.html">
-    <span>Message</span>
-  </a>
-  <div class="dropdown-divider"></div>
-  <a class="dropdown-item" href="docs.html">
+            <div data-flex-no-shrink>
+                <div class="nav-fold dropup">
+                    <a data-toggle="dropdown">
+                        <div class="pull-left">
+                            <div class="inline"><span class="avatar w-40 grey">JR</span></div>
+                            <!--<img src="images/a0.jpg" alt="..." class="w-40 img-circle hide">-->
+                        </div>
+                        <div class="clear hidden-folded p-x">
+                            <span class="block _500 text-muted">Jean Reyes</span>
+                            <div class="progress-xxs m-y-sm lt progress">
+                                <div class="progress-bar info" style="width: 15%;">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu w dropdown-menu-scale ">
+                        <a class="dropdown-item" href="profile.html">
+                            <span>Profile</span>
+                        </a>
+                        <a class="dropdown-item" href="setting.html">
+                            <span>Settings</span>
+                        </a>
+                        <a class="dropdown-item" href="app.inbox.html">
+                            <span>Inbox</span>
+                        </a>
+                        <a class="dropdown-item" href="app.message.html">
+                            <span>Message</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="docs.html">
               Need help?
             </a>
-  <a class="dropdown-item" href="signin.html">Sign out</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- / -->
+                        <a class="dropdown-item" href="signin.html">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / -->
 
-<!-- content -->
-<div id="content" class="app-content box-shadow-z2 bg pjax-container" role="main">
-  <div class="app-header white bg b-b">
-    <div class="navbar" data-pjax>
-      <a data-toggle="modal" data-target="#aside" class="navbar-item pull-left hidden-lg-up p-r m-a-0">
-        <i class="ion-navicon"></i>
-      </a>
-      <div class="navbar-item pull-left h5" id="pageTitle">Blank</div>
-      <!-- nabar right -->
-      <ul class="nav navbar-nav pull-right">
+    <!-- content -->
+    <div id="content" class="app-content box-shadow-z2 bg pjax-container" role="main">
+        <div class="app-header white bg b-b">
+            <div class="navbar" data-pjax>
+                <a data-toggle="modal" data-target="#aside" class="navbar-item pull-left hidden-lg-up p-r m-a-0">
+                    <i class="ion-navicon"></i>
+                </a>
+                <div class="navbar-item pull-left h5" id="pageTitle">Blank</div>
+                <!-- nabar right -->
+                <ul class="nav navbar-nav pull-right">
 
 
-        <li class="nav-item dropdown">
-          <a class="nav-link clear" data-toggle="dropdown">
-            <span class="avatar w-32">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link clear" data-toggle="dropdown">
+                            <span class="avatar w-32">
                         <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png" class="w-full rounded" alt="...">
                       </span> Nilesh Jayanandana
-          </a>
-          <div class="dropdown-menu w dropdown-menu-scale pull-right">
-            <a class="dropdown-item" href="profile.html">
-              <span>Profile</span>
-            </a>
-            <a class="dropdown-item" href="setting.html">
-              <span>Settings</span>
-            </a>
-            <a class="dropdown-item" href="app.inbox.html">
-              <span>Inbox</span>
-            </a>
-            <a class="dropdown-item" href="app.message.html">
-              <span>Message</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="docs.html">
+                        </a>
+                        <div class="dropdown-menu w dropdown-menu-scale pull-right">
+                            <a class="dropdown-item" href="profile.html">
+                                <span>Profile</span>
+                            </a>
+                            <a class="dropdown-item" href="setting.html">
+                                <span>Settings</span>
+                            </a>
+                            <a class="dropdown-item" href="app.inbox.html">
+                                <span>Inbox</span>
+                            </a>
+                            <a class="dropdown-item" href="app.message.html">
+                                <span>Message</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="docs.html">
                         Need help?
                       </a>
-            <a class="dropdown-item" href="signin.html">Sign out</a>
-          </div>
-        </li>
-      </ul>
-      <!-- / navbar right -->
-    </div>
-  </div>
-  <!--<div class="app-footer white bg p-a b-t">
+                            <a class="dropdown-item" href="signin.html">Sign out</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- / navbar right -->
+            </div>
+        </div>
+        <!--<div class="app-footer white bg p-a b-t">
     <div class="pull-right text-sm text-muted">Version 1.0.1</div>
     <span class="text-sm text-muted">&copy; Copyright.</span>
   </div>-->
-  <div class="app-body">
+        <div class="app-body">
 
-    <div class="padding">
-      <router-outlet></router-outlet>
+            <div class="padding">
+                <router-outlet></router-outlet>
 
+            </div>
+
+        </div>
     </div>
-
-  </div>
-</div>
-<!-- / -->
+    <!-- / -->
 
 
 
 
-<!-- ############ LAYOUT END-->
+    <!-- ############ LAYOUT END-->
 </div>

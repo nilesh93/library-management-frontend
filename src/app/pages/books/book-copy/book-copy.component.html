@@ -1,72 +1,74 @@
 <div class="row">
 
-  <div class="col-md-3">
+    <div class="col-md-3">
 
-    <div class="box">
+        <div class="box">
 
 
 
-      <div class="box-divider m-a-0"> </div>
-      <div class="box-body">
-        <div>
-          <img [src]="src" align="center" style=" height: auto;" class="img-responsive center-block" [hidden]="src === ''">
-</div>
- 
+            <div class="box-divider m-a-0"> </div>
+            <div class="box-body">
+                <div>
+                    <img [src]="copy.book_detail.image" *ngIf="copy.book_detail.image" align="center" style=" height: auto;" class="img-responsive center-block">
+                </div>
 
-</div>
-</div>
-</div>
 
-<div class="col-md-9">
+            </div>
+        </div>
+    </div>
 
-  <div class="nav-active-border b-primary bottom box">
-    <div class="nav nav-md">
-      <a class="nav-link" (click)="changeNav('SUMMARY')" [ngClass]="{active: nav==='SUMMARY'}">
+    <div class="col-md-9 ">
+
+        <div class="nav-active-border b-primary bottom box ">
+            <div class="nav nav-md ">
+                <a class="nav-link " (click)="changeNav( 'SUMMARY') " [ngClass]="{active: nav==='SUMMARY' } ">
             Copy Information
           </a>
-      <a class="nav-link " (click)="changeNav('HISTORY')" [ngClass]="{active: nav==='HISTORY'}">
+                <a class="nav-link " (click)="changeNav( 'HISTORY') " [ngClass]="{active: nav==='HISTORY' } ">
             Copy History
           </a>
 
 
-    </div>
-  </div>
-
-
-
-
-  <div class="row">
-   
-    <div class="col-md-6 pull-right">
-      <div class="dropdown inline">
-        <button class="btn primary    dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Checkout </button>
-        <div class="dropdown-menu pull-right">
-          <a class="dropdown-item">Read Now</a>
-          <a class="dropdown-item">Borrow</a>
-          <a class="dropdown-item">Reserve</a>
-
+            </div>
         </div>
-      </div>
 
-      <div class="dropdown inline">
-        <button class="btn info    dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Print Code </button>
-        <div class="dropdown-menu pull-right">
 
-          <a class="dropdown-item">Print Barcode</a>
-          <a class="dropdown-item">Print QR Code</a>
+
+
+        <div class="row ">
+            <div class="col-md-7   "></div>
+            <div class="col-md-5   ">
+                <div class="row">
+                    <div class="col-md-4" style="padding-right: 0cm">
+
+                        <div class="dropdown inline">
+                            <button class="btn grey  btn-block  rounded btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Print Code </button>
+                            <div class="dropdown-menu pull-right">
+                                <a class="dropdown-item">Print Barcode</a>
+                                <a class="dropdown-item">Print QR Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn   btn-block  info rounded btn-sm " (click)="editCopy()"> <span class="fa fa-pencil"></span>  &nbsp; Edit</button>
+                    </div>
+                    <div class="col-md-4" style="padding-left:0cm">
+                        <button class="btn btn-block btn-danger rounded btn-sm " (click)="deleteCopy()"><span class="fa fa-trash"></span>  &nbsp; Delete</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <br>
+        <div class="box-divider m-a-0 "></div>
+        <br>
 
-      <button class="btn  grey ">Edit</button>
-      <button class="btn  btn-danger ">Archive</button>
+
+        <app-book-view-summary [copyDetails]="copy" [bookDetails]="copy.book_detail " [showStats]="false " [category]="category " *ngIf="nav==='SUMMARY' && !isloading "></app-book-view-summary>
+        <app-book-copy-history *ngIf="nav==='HISTORY' "></app-book-copy-history>
+
     </div>
-  </div>
-  <br>
-  <div class="box-divider m-a-0"></div>
-  <br>
-
-
-  <app-book-view-summary *ngIf="nav==='SUMMARY'"></app-book-view-summary>
-  <app-book-copy-history  *ngIf="nav==='HISTORY'"></app-book-copy-history>
-
 </div>
+
+
+<app-copy-form [id]="copy.book_detail.id " [editFlag]="true " (updateEmitter)="reloadData($event) "></app-copy-form>
+<app-delete-modal (deleteEmitter)="delete($event) "></app-delete-modal>

@@ -1,0 +1,41 @@
+<modal #copyModal>
+    <form [formGroup]="copyForm" (ngSubmit)="submitForm()">
+        <modal-header>
+            <h4 class="modal-title">Copy Management</h4>
+        </modal-header>
+        <modal-body>
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="form-group row" [ngClass]="{'has-danger': validationRule('ref_id')}">
+                        <label class="form-control-label col-md-2">REF ID</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" formControlName="ref_id" />
+                            <div class="form-control-feedback" *ngIf="validationRule('ref_id')">
+                                REF ID is required.
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <label class="form-control-label col-md-2">Remarks</label>
+                        <div class="col-md-10">
+                            <textarea type="text" formControlName="remarks" class="form-control"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </modal-body>
+        <modal-footer>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="copyModal.dismiss()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </modal-footer>
+    </form>
+</modal>

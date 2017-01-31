@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { CopyFormComponent } from './../copy-form/copy-form.component';
+import { BookService } from './../../../shared/services/book.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ImageResult, ResizeOptions } from 'ng2-imageupload';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-book-view',
@@ -7,15 +11,23 @@ import { ImageResult, ResizeOptions } from 'ng2-imageupload';
   styleUrls: ['./book-view.component.scss']
 })
 export class BookViewComponent implements OnInit {
+  @ViewChild(CopyFormComponent) copyFormComponent: CopyFormComponent;
 
-  src: string = 'http://media.wiley.com/spa_assets/R16B092P2/site/wiley2/cvo/images/placeholders/placeholder_300.gif';
   nav: string = 'SUMMARY';
+  id: number;
+
+  bookDetails = {};
+  category = {};
+  copies: Array<Object> = [];
 
   selected(imageResult: ImageResult) {
-    this.src = imageResult.dataURL;
+    this.bookDetails['image'] = imageResult.dataURL;
   }
 
-  constructor() { }
+  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute) {
+    this.id = activatedRoute.snapshot.params['id'];
+    this.getBookDetails();
+  }
 
   ngOnInit() {
   }
@@ -23,5 +35,26 @@ export class BookViewComponent implements OnInit {
   changeNav(navType) {
     this.nav = navType;
   }
+
+  getBookDetails() {
+    this.bookService.viewBook(this.id).subscribe((data) => {
+      console.log(data);
+      this.bookDetails = data;
+      this.category = this.bookDetails['category'];
+      this.copies = this.bookDetails['copies'];
+    });
+  }
+
+  reloadData(obj) {
+    if (obj.updated) {
+      this.getBookDetails();
+      if (this.nav === 'EDIT') { this.nav = 'SUMMARY' };
+    }
+  }
+
+  addNewCopy() {
+    this.copyFormComponent.openModal();
+  }
+
 
 }
