@@ -1,64 +1,65 @@
 <div class="row">
 
-  <div class="col-md-3">
+    <div class="col-md-3">
 
-    <div class="box">
-
-
-      <div class="box-body">
-        <div>
-          <img [src]="src" align="center" style=" height: auto;" class="img-responsive center-block" [hidden]="src === ''">
-</div>
-<br> <br>
-<input type="file" image-upload (imageSelected)="selected($event)">
-
-</div>
-</div>
+        <div class="box">
 
 
-</div>
+            <div class="box-body" *ngIf="details.image">
+                <div>
+                    <img [src]="details.image" align="center" style=" height: auto;" class="img-responsive center-block">
+                </div>
+                <br> <br>
+                <input type="file" image-upload (imageSelected)="selected($event)">
+
+            </div>
+        </div>
 
 
-<div class="col-md-9">
+    </div>
 
-  <div class="nav-active-border b-primary bottom box">
-    <div class="nav nav-md">
-      <a class="nav-link" (click)="changeNav('SUMMARY')" [ngClass]="{active: nav==='SUMMARY'}">
+
+    <div class="col-md-9">
+
+        <div class="nav-active-border b-primary bottom box">
+            <div class="nav nav-md">
+                <a class="nav-link" (click)="changeNav('SUMMARY')" [ngClass]="{active: nav==='SUMMARY'}">
             Summary
           </a>
-      <a class="nav-link " (click)="changeNav('PAYMENTS')" [ngClass]="{active: nav==='PAYMENTS'}">
+                <a class="nav-link " (click)="changeNav('PAYMENTS')" [ngClass]="{active: nav==='PAYMENTS'}">
             Payments
           </a>
-      <a class="nav-link " (click)="changeNav('ACTIVITY')" [ngClass]="{active: nav==='ACTIVITY'}">
+                <a class="nav-link " (click)="changeNav('ACTIVITY')" [ngClass]="{active: nav==='ACTIVITY'}">
             History
           </a>
-      <a class="nav-link" (click)="changeNav('EDIT')" [ngClass]="{active: nav==='EDIT'}">
+                <a class="nav-link" (click)="changeNav('EDIT')" [ngClass]="{active: nav==='EDIT'}">
           Edit
           </a>
 
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6 pull-right">
+
+
+
+                <button class="btn  btn-sm  rounded primary "> <span class="fa fa-plus"></span> &nbsp; Payment</button>
+                <button class="btn  btn-sm  rounded grey ">Ban Member</button>
+                <button class="btn  btn-sm rounded danger " (click)="addNewCopy()"> <span class="fa fa-trash"></span> &nbsp; Archive Member</button>
+
+            </div>
+        </div>
+        <br>
+        <div class="box-divider m-a-0"></div>
+        <br>
+
+
+        <app-member-view-activity *ngIf="nav==='ACTIVITY'"></app-member-view-activity>
+        <app-member-view-summary [details]="details" [type]="type" *ngIf="nav==='SUMMARY'"></app-member-view-summary>
+        <app-member-view-payments *ngIf="nav==='PAYMENTS'"></app-member-view-payments>
+        <app-member-form [src]="details.image" (updateEmitter)="reloadData($event)" [details]="details" [editFlag]="true" *ngIf="nav==='EDIT'"></app-member-form>
+
     </div>
-  </div>
-
-
-  <div class="row">
-
-    <div class="col-md-6 pull-right">
-
-
-
-      <button class="btn  primary ">Add Payment</button>
-      <button class="btn  grey ">Ban Member</button>
-      <button class="btn  btn-danger ">Disable Member</button>
-    </div>
-  </div>
-  <br>
-  <div class="box-divider m-a-0"></div>
-  <br>
-
-
-  <app-member-view-activity *ngIf="nav==='ACTIVITY'"></app-member-view-activity>
-  <app-member-view-summary *ngIf="nav==='SUMMARY'"></app-member-view-summary>
-  <app-member-view-payments *ngIf="nav==='PAYMENTS'"></app-member-view-payments>
-  <app-member-form *ngIf="nav==='EDIT'"></app-member-form>
-
-</div>

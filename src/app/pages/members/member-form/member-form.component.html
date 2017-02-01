@@ -1,116 +1,130 @@
-  <div class="box">
-    <div class="box-header">
-      <h2>Main Information</h2>
-    </div>
-    <div class="box-divider m-a-0"></div>
-    <div class="box-body">
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="box">
+        <div class="box-header">
+            <h2>Main Information</h2>
+        </div>
+        <div class="box-divider m-a-0"></div>
+        <div class="box-body">
 
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">Member Type</label>
-        <div class="col-sm-4">
-          <select class="form-control">
-              <option value="">Library</option>
-              <option value="">Individual Member</option>
-                    <option value="">Individual Member</option>
-                          <option value="">Committee</option>
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Member Type</label>
+                <div class="col-sm-4">
+                    <select class="form-control" formControlName="type">
+                    <option *ngFor="let type of types" [value]="type.id">
+                        {{type.type}} -  Rs. {{type.fee | number : '1.2-2'}}
+                    </option>
             </select>
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">Title</label>
-        <div class="col-sm-2">
-          <select class="form-control">
-              <option value="MR">MR</option>
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Title</label>
+                <div class="col-sm-2">
+                    <select class="form-control" formControlName="title">
+              <option [value]="title.title" *ngFor="let title of titles">{{title.title}}</option>
             </select>
+                </div>
+            </div>
+
+            <div class="form-group row" [ngClass]="{'has-danger': validationRule('name')}">
+                <label class="col-sm-2 form-control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="name" placeholder="">
+                    <div class="form-control-feedback" *ngIf="validationRule('name')">
+                        Name is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">NIC</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" formControlName="nic" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">REF ID</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" formControlName="ref_id" placeholder="">
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
-      </div>
+    </div>
 
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">Name</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="">
+    <div class="box">
+        <div class="box-header">
+            <h2>Contact Information</h2>
         </div>
-      </div>
+        <div class="box-divider m-a-0"></div>
+        <div class="box-body">
 
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">NIC</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="">
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label" [ngClass]="{'has-danger': validationRule('mobile')}">Mobile</label>
+                <div class="col-sm-4" [ngClass]="{'has-danger': validationRule('mobile')}">
+                    <input type="text" class="form-control" formControlName="mobile" placeholder="">
+                    <div class="form-control-feedback" *ngIf="validationRule('mobile')">
+                        Name is required.
+                    </div>
+                </div>
+                <label class="col-sm-2 form-control-label"> Home</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" formControlName="home" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="email" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Address</label>
+                <div class="col-sm-10">
+                    <textarea type="text" class="form-control" formControlName="address" placeholder=""></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Town</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="town" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Remarks</label>
+                <div class="col-sm-10">
+                    <textarea type="text" class="form-control" formControlName="remarks" placeholder=""></textarea>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">REF ID</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="">
+
+
+
+
+    <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-2">
+            <button type="reset" class="btn  btn-block btn-fw white">Reset</button>
         </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-block btn-fw primary">Save</button>
+        </div>
 
 
     </div>
-  </div>
-
-  <div class="box">
-    <div class="box-header">
-      <h2>Contact Information</h2>
-    </div>
-    <div class="box-divider m-a-0"></div>
-    <div class="box-body">
-
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">Mobile</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="">
-        </div>
-        <label class="col-sm-2 form-control-label"> Home</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">Email</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">Address</label>
-        <div class="col-sm-10">
-          <textarea type="text" class="form-control" placeholder=""></textarea>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="col-sm-2 form-control-label">Town</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="">
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-  <div class="row">
-    <div class="col-md-8"></div>
-    <div class="col-md-2">
-      <button class="btn  btn-block btn-fw white">Reset</button>
-    </div>
-    <div class="col-md-2">
-      <a [routerLink]="['/','members','view','1']" class="btn btn-block btn-fw primary">Save</a>
-    </div>
-
-
-  </div>
+</form>

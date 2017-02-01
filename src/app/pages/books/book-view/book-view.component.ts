@@ -38,7 +38,6 @@ export class BookViewComponent implements OnInit {
 
   getBookDetails() {
     this.bookService.viewBook(this.id).subscribe((data) => {
-      console.log(data);
       this.bookDetails = data;
       this.category = this.bookDetails['category'];
       this.copies = this.bookDetails['copies'];

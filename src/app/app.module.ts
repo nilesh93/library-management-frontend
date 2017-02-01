@@ -1,3 +1,4 @@
+import { MemberService } from './shared/services/member.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -45,6 +46,7 @@ import { UserFormComponent } from './pages/users/user-form/user-form.component';
 import { UserListComponent } from './pages/users/user-list/user-list.component';
 import { CopyFormComponent } from './pages/books/copy-form/copy-form.component';
 import { DeleteModalComponent } from './shared/components/delete-modal/delete-modal.component';
+
 
 
 @NgModule({
@@ -96,7 +98,8 @@ import { DeleteModalComponent } from './shared/components/delete-modal/delete-mo
   ],
   providers: [
     BookService,
-    CommonService
+    CommonService,
+    MemberService
   ],
   bootstrap: [AppComponent]
 })

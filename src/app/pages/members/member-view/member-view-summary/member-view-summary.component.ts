@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-member-view-summary',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-view-summary.component.scss']
 })
 export class MemberViewSummaryComponent implements OnInit {
+  @Input() details: Object = {};
+  @Input() type: Object = {};
 
   constructor() { }
 
